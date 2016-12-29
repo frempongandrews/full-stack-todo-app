@@ -70,7 +70,7 @@ table {
   margin: 10px auto;
   /*background-color: aqua;*/
   background-color: #ffffff;
-
+  position: relative;
 }
 
 /*
@@ -117,10 +117,11 @@ table {
 .list-board{
   /*background-color: green;*/
   width: 100%;
-  background-color: aquamarine;
+  /*background-color: aquamarine;*/
   height: 70%;
   overflow-y: auto;
   overflow-x: hidden;
+  position: relative;
 }
 
 .list-item{
@@ -174,6 +175,12 @@ input[type=checkbox]{
   footer
   ==========================================================
 */
+
+.add-button-container{
+  position: absolute;
+  bottom: 30px;
+}
+
 .add-button{
   position: relative;
   width: 40px;
