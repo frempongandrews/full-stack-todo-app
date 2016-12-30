@@ -7,14 +7,6 @@ const ListBoard = React.createClass({
             <div className="list-board">
                 <ul>
                     <ListItem />
-                    <ListItem />
-                    <ListItem />
-                    <ListItem />
-                    <ListItem />
-                    <ListItem />
-
-
-
                 </ul>
             </div>
         )
