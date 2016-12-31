@@ -2,6 +2,9 @@ import React from "react";
 
 
 const ListItem = React.createClass({
+
+
+
     render () {
         console.log(this.props);
         return (
@@ -11,6 +14,7 @@ const ListItem = React.createClass({
                         <input type="checkbox" />
                     </div>
                     <p>{this.props.name}</p>
+
                     <span>{this.props.time}</span>
 
                 </li>

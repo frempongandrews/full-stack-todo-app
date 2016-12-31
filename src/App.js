@@ -20,6 +20,7 @@ const App = React.createClass({
             },
 
             isAdding: false,
+            isEditing: false,
 
             taskFormName: "",
             taskFormTime: ""
@@ -30,9 +31,11 @@ const App = React.createClass({
         axios.get('https://todosserver.herokuapp.com/todos')
             .then(function (response) {
                 // console.log(response.data);
-                this.setState({
-                    todos: response.data
-                })
+                if (response.status === 200) {
+                    this.setState({
+                        todos: response.data
+                    })
+                }
             }.bind(this))
             .catch(function (error) {
                 console.log(error);
@@ -57,9 +60,15 @@ const App = React.createClass({
         })
     },
 
+
     onSubmitTask (name, time) {
-        console.log(name);
-        console.log(time);
+        // console.log(name);
+        // console.log(time);
+        var newTask = {
+            name: name,
+            time: time,
+            completed: false
+        }
 
         axios.post('https://todosserver.herokuapp.com/todos', {
                 name: name,
@@ -74,9 +83,9 @@ const App = React.createClass({
             });
 
         this.setState({
+            todos: this.state.todos.concat([newTask]),
             isAdding: false
-        })
-
+        });
 
     },
 
@@ -121,7 +130,9 @@ const App = React.createClass({
         return (
             <div className="App">
                 <Header currentDate={this.state.currentDate} todos={this.state.todos}/>
-                <ListBoard todos={this.state.todos}/>
+                <ListBoard
+                    todos={this.state.todos}
+                />
                 <AddTodo showAddTask={this.showAddTask}/>
                 {this.state.isAdding ?
                     <AddTodoForm

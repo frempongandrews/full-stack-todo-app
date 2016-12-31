@@ -13,7 +13,7 @@ const ListBoard = React.createClass({
                 time={todo.time}
                 completed={todo.completed}
             />
-        })
+        }.bind(this))
         return (
             <div className="list-board">
                 <ul>
