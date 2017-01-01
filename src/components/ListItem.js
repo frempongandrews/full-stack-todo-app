@@ -21,7 +21,14 @@ const ListItem = React.createClass({
             <div>
                 <li className="list-item" >
                     <div className="input-checkbox-container">
-                        <input type="checkbox" onChange={this.handleCompletedTask} defaultChecked={this.props.completed} />
+
+                        <input
+                            type="checkbox"
+                            onChange={this.handleCompletedTask}
+                            defaultChecked={this.props.completed}
+                            className="list-item-checkbox"
+                        />
+                        <label className="input-checkbox-result">&#10003;</label>
                     </div>
                     <p>{this.props.name}</p>
 
