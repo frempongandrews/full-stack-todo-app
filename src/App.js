@@ -90,6 +90,43 @@ const App = React.createClass({
 
     },
 
+    onCompletedTask (checkedValue, target) {
+        console.log(checkedValue);
+        console.log(target);
+
+        axios.put('https://todosserver.herokuapp.com/todos/' + target.id, {
+                completed: checkedValue,
+            }
+        )
+            .then(function (response) {
+                // console.log(response);
+                var todos = this.state.todos;
+                var len = todos.length;
+                for (var i = 0; i < len; i++) {
+                    if (target.id !== response._id) {
+                        console.log("yes");
+                    }
+                }
+                // this.setState({
+                //     todos: this.state.todos.concat([newTask]),
+                //     isAdding: false
+                // });
+                console.log(response);
+            }.bind(this))
+            .catch(function (error) {
+                console.log(error);
+            });
+
+
+
+
+
+
+
+
+
+    },
+
     render () {
 
         // console.log(this.state);
@@ -133,6 +170,7 @@ const App = React.createClass({
                 <Header currentDate={this.state.currentDate} todos={this.state.todos}/>
                 <ListBoard
                     todos={this.state.todos}
+                    onCompletedTask={this.onCompletedTask}
                 />
                 <AddTodo showAddTask={this.showAddTask}/>
                 {this.state.isAdding ?

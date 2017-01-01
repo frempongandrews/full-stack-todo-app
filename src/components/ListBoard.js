@@ -12,6 +12,7 @@ const ListBoard = React.createClass({
                 name={todo.name}
                 time={todo.time}
                 completed={todo.completed}
+                onCompletedTask={this.props.onCompletedTask}
             />
         }.bind(this))
         return (
