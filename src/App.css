@@ -143,16 +143,16 @@ table {
 .input-checkbox-container{
   /*background-color: fuchsia;*/
   position: relative;
-  flex: 1;
+  flex: 0.5;
   width: 20px;
   height: 20px;
   border-radius: 100%;
   align-self: center;
   /*border: 2px solid black;*/
   position: relative;
-  margin-left: 10px;
+  margin-left: 5px;
   margin-right: 5px;
-  margin-top: 5px;
+  margin-top: -2px;
   cursor: pointer;
 }
 
@@ -220,6 +220,29 @@ input[type="checkbox"]:checked + .input-checkbox-result{
 .list-item span{
   position: relative;
   margin-right: -20px;
+}
+
+.remove-item{
+  border: none;
+  display: inline-block;
+  height: 20px;
+  position: relative;
+  top: 12px;
+  right: 5px;
+  background-color: white;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: all 0.4s ease;
+}
+
+.list-item:hover .remove-item{
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.remove-item:focus{
+  outline: none;
 }
 
 /*

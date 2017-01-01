@@ -33,7 +33,7 @@ const ListItem = React.createClass({
                     <p>{this.props.name}</p>
 
                     <span>{this.props.time}</span>
-
+                    <button className="remove-item">remove</button>
                 </li>
             </div>
         )
