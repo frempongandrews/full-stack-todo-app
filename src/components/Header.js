@@ -5,7 +5,7 @@ const Header = React.createClass({
     getRemainingTasks (tasks) {
         tasks = this.props.todos.length;
         if (tasks === 0) {
-            return "All tasks completed";
+            return "tasks completed";
         }
         if (tasks === 1 ) {
             return tasks + " task pending";

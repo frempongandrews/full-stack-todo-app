@@ -64,6 +64,7 @@ const App = React.createClass({
     onSubmitTask (name, time) {
         // console.log(name);
         // console.log(time);
+
         var newTask = {
             name: name,
             time: time,
@@ -76,7 +77,7 @@ const App = React.createClass({
             }
         )
             .then(function (response) {
-                console.log(response);
+                // console.log(response);
             })
             .catch(function (error) {
                 console.log(error);

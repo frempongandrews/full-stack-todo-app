@@ -18,7 +18,18 @@ const AddTodoForm = React.createClass({
     handleOnSubmitTask (e, name, time) {
         e.preventDefault();
         name = this.props.taskFormName;
-        time = this.props.taskFormTime;
+        time = Number(this.props.taskFormTime).toFixed(2);
+
+        if (Number(time) > 24 ) {
+            alert("Please insert a human time: between 0 and 24");
+            return;
+        }
+
+        if((name).trim().length === 0) {
+            alert("please insert a task");
+            return;
+        }
+
         this.props.onSubmitTask (name, time);
     },
     render () {
@@ -30,9 +41,9 @@ const AddTodoForm = React.createClass({
                     <input type="text" onChange={this.onTaskNameChangeHandler}/>
                     <br />
                     <label>Time</label>
-                    <input type="text" onChange={this.onTaskTimeChangeHandler}/>
+                    <input type="number" onChange={this.onTaskTimeChangeHandler}/>
                     <br />
-                    <input type="submit"/>
+                    <input type="submit"/> <button>cancel</button>
                 </form>
             </div>
         )
