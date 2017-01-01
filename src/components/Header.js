@@ -3,16 +3,24 @@ import React from "react";
 const Header = React.createClass({
 
     getRemainingTasks (tasks) {
-        tasks = this.props.todos.length;
-        if (tasks === 0) {
-            return "tasks completed";
+
+        tasks = this.props.todos;
+        var pending = tasks.filter(function (task) {
+            return task.completed === false;
+        }).length;
+
+        if (pending === 0) {
+            return "No task pending"
         }
-        if (tasks === 1 ) {
-            return tasks + " task pending";
+
+        if (pending === 1) {
+            return pending + " task pending"
         }
-        if (tasks > 1 ) {
-            return tasks + " tasks pending";
+
+        if (pending > 1) {
+            return pending + " tasks pending"
         }
+
     },
 
     render () {

@@ -2,11 +2,7 @@ import React from "react";
 
 
 const ListItem = React.createClass({
-    getInitialState () {
-        return {
-            check: false
-        }
-    },
+
     handleCompletedTask (e) {
         var checkedValue = e.target.checked;
         var target = this.props;
@@ -19,13 +15,13 @@ const ListItem = React.createClass({
     },
 
     render () {
-        console.log(this.props);
-        console.log(this.state.check);
+        // console.log(this.props);
+
         return (
             <div>
                 <li className="list-item" >
                     <div className="input-checkbox-container">
-                        <input type="checkbox" onChange={this.handleCompletedTask} value={this.state.check} />
+                        <input type="checkbox" onChange={this.handleCompletedTask} defaultChecked={this.props.completed} />
                     </div>
                     <p>{this.props.name}</p>
 

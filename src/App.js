@@ -65,53 +65,20 @@ const App = React.createClass({
         // console.log(name);
         // console.log(time);
 
-        var newTask = {
-            name: name,
-            time: time,
-            completed: false
-        }
-
         axios.post('https://todosserver.herokuapp.com/todos', {
                 name: name,
                 time: time
             }
         )
             .then(function (response) {
-                // console.log(response);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
+                console.log(response.data);
+                var newTask = response.data;
+                this.setState({
+                    todos: this.state.todos.concat([newTask]),
+                    isAdding: false
+                });
 
-        this.setState({
-            todos: this.state.todos.concat([newTask]),
-            isAdding: false
-        });
-
-    },
-
-    onCompletedTask (checkedValue, target) {
-        console.log(checkedValue);
-        console.log(target);
-
-        axios.put('https://todosserver.herokuapp.com/todos/' + target.id, {
-                completed: checkedValue,
-            }
-        )
-            .then(function (response) {
-                // console.log(response);
-                var todos = this.state.todos;
-                var len = todos.length;
-                for (var i = 0; i < len; i++) {
-                    if (target.id !== response._id) {
-                        console.log("yes");
-                    }
-                }
-                // this.setState({
-                //     todos: this.state.todos.concat([newTask]),
-                //     isAdding: false
-                // });
-                console.log(response);
+                // console.log("posting");
             }.bind(this))
             .catch(function (error) {
                 console.log(error);
@@ -119,17 +86,44 @@ const App = React.createClass({
 
 
 
+    },
+
+    onCompletedTask (checkedValue, target) {
+        // console.log(checkedValue);
+        // console.log(target);
+        var id = target.id;
+        console.log(id);
+
+        axios.put('https://todosserver.herokuapp.com/todos/' + id, {
+                completed: checkedValue,
+            }
+        )
+            .then(function (response) {
+                console.log(response.data);
+                var todos = this.state.todos;
+                var len = todos.length
+                for (var i = 0; i < len; i++) {
+                    var todo = todos[i];
+                    if (todo._id === response.data._id) {
+                        todo.completed = checkedValue;
+                    }
+                }
+
+                this.setState ({
+                    todos: todos
+                });
 
 
-
-
-
+            }.bind(this))
+            .catch(function (error) {
+                console.log(error);
+            });
 
     },
 
     render () {
 
-        // console.log(this.state);
+        // console.log(this.state.todos);
         //console.log(this.state.currentDate.day + " " + this.state.currentDate.month);
 
 
