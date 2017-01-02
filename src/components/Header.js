@@ -26,6 +26,7 @@ const Header = React.createClass({
     render () {
 
         return (
+
             <div className="header">
                 <div className="day-date">
                     <p>{this.props.currentDate.day}</p> <br />

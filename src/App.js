@@ -123,7 +123,7 @@ const App = React.createClass({
 
     removeTask (item) {
         // console.log(item);
-        console.log(item.id);
+        // console.log(item.id);
         var itemId = item.id;
         var todos = this.state.todos;
         var filteredTodos = todos.filter(function (task) {
