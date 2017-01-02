@@ -251,8 +251,8 @@ input[type="checkbox"]:checked + .input-checkbox-result{
 .add-todo-form{
   background-color: #cccccc;
   position: fixed;
-  width: 36%;
-  height: 15%;
+  width: 20vw;
+  height: 20vh;
   top: 40%;
   padding: 8px;
   /*z-index: 1000;*/
