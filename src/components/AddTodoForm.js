@@ -32,18 +32,23 @@ const AddTodoForm = React.createClass({
 
         this.props.onSubmitTask (name, time);
     },
+
+    handleHideAddTodoForm (e) {
+        e.preventDefault();
+        this.props.hideAddTodoForm();
+    },
     render () {
 
         return (
             <div className="add-todo-form">
                 <form onSubmit={this.handleOnSubmitTask}>
-                    <label>Name</label>
+                    <label>Task</label>
                     <input type="text" onChange={this.onTaskNameChangeHandler}/>
                     <br />
                     <label>Time</label>
-                    <input type="number" onChange={this.onTaskTimeChangeHandler}/>
+                    <input type="number" onChange={this.onTaskTimeChangeHandler} className="time-input"/>
                     <br />
-                    <input type="submit"/> <button>cancel</button>
+                    <input type="submit" value="Add task"/> <button onClick={this.handleHideAddTodoForm}>cancel</button>
                 </form>
             </div>
         )

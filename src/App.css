@@ -174,9 +174,6 @@ input[type="checkbox"]:focus{
   outline: none;
 }
 
-
-
-
 input[type="checkbox"]:hover {
   opacity: 0.8;
   z-index: 0;
@@ -254,10 +251,30 @@ input[type="checkbox"]:checked + .input-checkbox-result{
 .add-todo-form{
   background-color: #cccccc;
   position: fixed;
-  width: 30%;
-  height: 10%;
+  width: 36%;
+  height: 15%;
   top: 40%;
+  padding: 8px;
+  /*z-index: 1000;*/
+}
 
+.add-todo-form input {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+input.time-input{
+  margin-left: 7px;
+}
+
+.add-todo-form button{
+  margin: 15px 5px;
+  cursor: pointer;
+}
+
+input[type="submit"] {
+  margin-left: 10px;
+  cursor: pointer;
 }
 
 

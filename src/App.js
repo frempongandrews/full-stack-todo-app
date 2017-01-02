@@ -48,6 +48,12 @@ const App = React.createClass({
         })
     },
 
+    hideAddTodoForm () {
+        this.setState({
+            isAdding: false
+        })
+    },
+
     onTaskNameChange (name) {
         this.setState({
             taskFormName: name
@@ -164,6 +170,7 @@ const App = React.createClass({
                         onTaskNameChange={this.onTaskNameChange}
                         onTaskTimeChange={this.onTaskTimeChange}
                         onSubmitTask={this.onSubmitTask}
+                        hideAddTodoForm={this.hideAddTodoForm}
                     />
                     : null}
             </div>
