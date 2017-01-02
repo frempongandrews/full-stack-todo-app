@@ -253,7 +253,7 @@ input[type="checkbox"]:checked + .input-checkbox-result{
   position: fixed;
   width: 20vw;
   height: 20vh;
-  top: 40%;
+  top: 30vh;
   padding: 8px;
   /*z-index: 1000;*/
 }
