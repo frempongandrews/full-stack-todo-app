@@ -1,5 +1,6 @@
 import React from "react";
 import ListItem from "./ListItem";
+import CSSTransitionGroup from "react-addons-css-transition-group";
 
 const ListBoard = React.createClass({
 
@@ -18,9 +19,16 @@ const ListBoard = React.createClass({
         }.bind(this))
         return (
             <div className="list-board">
-                <ul>
+                <CSSTransitionGroup
+                    component="ul"
+                    className="list-board-container"
+                    transitionName="listItems"
+                    transitionEnterTimeout={500}
+                    transitionLeaveTimeout={500}
+                >
+
                     {todoItems}
-                </ul>
+                </CSSTransitionGroup>
             </div>
         )
     }

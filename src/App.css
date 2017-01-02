@@ -322,3 +322,19 @@ input[type="submit"] {
   color: white;
 }
 
+/*
+  ==========================================================
+ transitions
+  ==========================================================
+*/
+
+.listItems-enter{
+background-color: red;
+  transition: 0.5s;
+  transform: translateY(-50px);
+}
+
+.listItems-enter.listItems-enter-active{
+  background-color: green;
+  transform: translateY(0px);
+}
