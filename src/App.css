@@ -327,35 +327,17 @@ input[type="submit"] {
  transitions
   ==========================================================
 */
-.example-enter {
-  opacity: 0.01;
-}
-
-.example-enter.example-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
-}
-
-.example-leave {
-  opacity: 1;
-}
-
-.example-leave.example-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
-}
-
 
 
 
 .listItem-enter{
-  transform: translateX(-200px);
+  transform: translateY(-200px);
   opacity: 0.2;
 
 }
 
 .listItem-enter.listItem-enter-active{
-  transform: translateX(0px);
+  transform: translateY(0px);
   opacity: 1;
   transition: all 500ms ease-in;
 }
