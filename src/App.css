@@ -327,14 +327,46 @@ input[type="submit"] {
  transitions
   ==========================================================
 */
-
-.listItems-enter{
-background-color: red;
-  transition: 0.5s;
-  transform: translateY(-50px);
+.example-enter {
+  opacity: 0.01;
 }
 
-.listItems-enter.listItems-enter-active{
-  background-color: green;
-  transform: translateY(0px);
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+
+
+
+.listItem-enter{
+  transform: translateX(-200px);
+  opacity: 0.2;
+
+}
+
+.listItem-enter.listItem-enter-active{
+  transform: translateX(0px);
+  opacity: 1;
+  transition: all 500ms ease-in;
+}
+
+.listItem-leave{
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+.listItem-leave.listItem-leave-active{
+  opacity: 0;
+  transform: translateX(300px);
+  transition: all 500ms ease-in;
 }

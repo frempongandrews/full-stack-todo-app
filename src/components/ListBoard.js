@@ -22,7 +22,7 @@ const ListBoard = React.createClass({
                 <CSSTransitionGroup
                     component="ul"
                     className="list-board-container"
-                    transitionName="listItems"
+                    transitionName="listItem"
                     transitionEnterTimeout={500}
                     transitionLeaveTimeout={500}
                 >
