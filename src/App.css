@@ -251,7 +251,7 @@ input[type="checkbox"]:checked + .input-checkbox-result{
 */
 
 .add-todo-form{
-  background-color: #cccccc;
+  background-color: #E3EAF5;
   position: fixed;
   width: 20vw;
   height: 20vh;
@@ -328,7 +328,7 @@ input[type="submit"] {
   ==========================================================
 */
 
-
+/*list items*/
 
 .listItem-enter{
   transform: translateY(-200px);
@@ -352,3 +352,14 @@ input[type="submit"] {
   transform: translateX(300px);
   transition: all 500ms ease-in;
 }
+
+/*form*/
+
+/*.formTransition-enter{*/
+  /*opacity: 0;*/
+/*}*/
+
+/*.formTransition-enter.formTransition-enter-active{*/
+  /*opacity: 1;*/
+  /*transition: all 400ms ease;*/
+/*}*/

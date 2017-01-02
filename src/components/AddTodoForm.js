@@ -1,5 +1,5 @@
 import React from "react";
-
+import CSSTransitionGroup from "react-addons-css-transition-group";
 
 const AddTodoForm = React.createClass({
 
@@ -40,8 +40,14 @@ const AddTodoForm = React.createClass({
     render () {
 
         return (
-            <div className="add-todo-form">
-                <form onSubmit={this.handleOnSubmitTask}>
+            <CSSTransitionGroup
+                component="div"
+                transitionName="formTransition"
+                transitionEnterTimeout={400}
+                transitionLeaveTimeout={400}
+                className="add-todo-form form"
+            >
+                <form onSubmit={this.handleOnSubmitTask} key={1}>
                     <label>Task</label>
                     <input type="text" onChange={this.onTaskNameChangeHandler}/>
                     <br />
@@ -50,7 +56,7 @@ const AddTodoForm = React.createClass({
                     <br />
                     <input type="submit" value="Add task"/> <button onClick={this.handleHideAddTodoForm}>cancel</button>
                 </form>
-            </div>
+            </CSSTransitionGroup>
         )
     }
 });
