@@ -14,6 +14,12 @@ const ListItem = React.createClass({
         // console.log(target);
     },
 
+    handleRemoveTask (){
+        var item = this.props;
+        // console.log(item);
+        this.props.removeTask(item);
+    },
+
     render () {
         // console.log(this.props);
 
@@ -33,7 +39,7 @@ const ListItem = React.createClass({
                     <p>{this.props.name}</p>
 
                     <span>{this.props.time}</span>
-                    <button className="remove-item">remove</button>
+                    <button className="remove-item" onClick={this.handleRemoveTask}>remove</button>
                 </li>
             </div>
         )

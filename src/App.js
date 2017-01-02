@@ -121,43 +121,32 @@ const App = React.createClass({
 
     },
 
+    removeTask (item) {
+        // console.log(item);
+        console.log(item.id);
+        var itemId = item.id;
+        var todos = this.state.todos;
+        var filteredTodos = todos.filter(function (task) {
+            return task._id !== itemId
+        });
+        this.setState({
+            todos: filteredTodos
+        });
+
+        axios.delete('https://todosserver.herokuapp.com/todos/' + itemId, {
+                id: itemId,
+            }
+        )
+            .then(function (response) {
+                console.log(response.data);
+
+            }.bind(this))
+            .catch(function (error) {
+                console.log(error);
+            });
+    },
+
     render () {
-
-        // console.log(this.state.todos);
-        //console.log(this.state.currentDate.day + " " + this.state.currentDate.month);
-
-
-//         axios.post('https://todosserver.herokuapp.com/todos',{
-//             name: "buying tesla",
-//
-//         }
-// )
-//     .then(function (response) {
-//         console.log(response);
-//     })
-//     .catch(function (error) {
-//         console.log(error);
-//     });
-
-// axios.get('https://todosserver.herokuapp.com/todos')
-//     .then(function (response) {
-//         console.log(response.data);
-//     })
-//     .catch(function (error) {
-//         console.log(error);
-//     });
-
-
-        //     axios({
-        //         method: 'delete',
-        //         url: 'https://todosserver.herokuapp.com/todos/'
-        //     })
-        // .then(function (response) {
-        //     console.log(response);
-        // })
-        // .catch(function (error) {
-        //     console.log(error);
-        // });
 
         return (
             <div className="App">
@@ -165,6 +154,7 @@ const App = React.createClass({
                 <ListBoard
                     todos={this.state.todos}
                     onCompletedTask={this.onCompletedTask}
+                    removeTask={this.removeTask}
                 />
                 <AddTodo showAddTask={this.showAddTask}/>
                 {this.state.isAdding ?

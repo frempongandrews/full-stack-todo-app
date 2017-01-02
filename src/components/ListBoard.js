@@ -13,6 +13,7 @@ const ListBoard = React.createClass({
                 time={todo.time}
                 completed={todo.completed}
                 onCompletedTask={this.props.onCompletedTask}
+                removeTask={this.props.removeTask}
             />
         }.bind(this))
         return (
