@@ -252,34 +252,42 @@ input[type="checkbox"]:checked + .input-checkbox-result{
 
 .add-todo-form{
   background-color: #E3EAF5;
-  position: fixed;
-  width: 20vw;
-  height: 20vh;
-  min-width: 200px;
-  max-width: 250px;
-  top: 25vh;
+  position: absolute;
+  width: 95%;
+  height: 60px;
+  font-size: 14px;
   padding: 8px;
-  /*z-index: 1000;*/
+  bottom: 0;
 }
 
 .add-todo-form input {
-  margin-top: 10px;
-  margin-left: 10px;
+  margin-top: 5px;
+  margin-left: 20px;
 }
 
 input.time-input{
-  margin-left: 7px;
+  margin-left: 17px;
 }
 
 .add-todo-form button{
-  margin: 15px 5px;
+  position: absolute;
+  right: 50px;
+  bottom: 22px;
+  background-color: #E3EAF5;
+  border: hidden;
   cursor: pointer;
 }
 
 input[type="submit"] {
-  margin-left: 10px;
   cursor: pointer;
+  position: absolute;
+  right: 40px;
+  background-color: #E3EAF5;
+  border: hidden;
+  top: 8px
 }
+
+
 
 
 
