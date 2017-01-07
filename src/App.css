@@ -268,16 +268,16 @@ input[type="checkbox"]:checked + .input-checkbox-result{
 
 .add-todo-form input {
   margin-top: 5px;
-  margin-left: 20px;
+  margin-left: 35px;
 }
 
 input.time-input{
-  margin-left: 17px;
+  margin-left: 32px;
 }
 
 .add-todo-form button{
   position: absolute;
-  right: 50px;
+  right: 35px;
   bottom: 22px;
   background-color: #E3EAF5;
   border: hidden;
@@ -287,7 +287,7 @@ input.time-input{
 input[type="submit"] {
   cursor: pointer;
   position: absolute;
-  right: 40px;
+  right: 30px;
   background-color: #E3EAF5;
   border: hidden;
   top: 8px
