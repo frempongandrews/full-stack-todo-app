@@ -36,7 +36,7 @@ const ListItem = React.createClass({
                         />
                         <label className="input-checkbox-result">&#10003;</label>
                     </div>
-                    <p>{this.props.name}</p>
+                    <p className={this.props.completed ? "completed" : ""}>{this.props.name}</p>
 
                     <span>{this.props.time}</span>
                     <button className="remove-item" onClick={this.handleRemoveTask}>remove</button>
