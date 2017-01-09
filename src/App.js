@@ -156,6 +156,7 @@ const App = React.createClass({
 
         return (
             <div className="App">
+                <h2 className="title">{this.props.title}</h2>
                 <Header currentDate={this.state.currentDate} todos={this.state.todos}/>
                 <ListBoard
                     todos={this.state.todos}
