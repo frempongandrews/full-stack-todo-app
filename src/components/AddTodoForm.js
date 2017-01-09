@@ -54,7 +54,7 @@ const AddTodoForm = React.createClass({
                     <label>Time</label>
                     <input type="number" onChange={this.onTaskTimeChangeHandler} className="time-input"/>
                     <br />
-                    <input type="submit" value="Add task"/> <button onClick={this.handleHideAddTodoForm}>cancel</button>
+                    <input type="submit" value="Add task"/> <button onClick={this.handleHideAddTodoForm} onKeyDown={this.handleHideAddTodoForm}>cancel</button>
                 </form>
             </CSSTransitionGroup>
         )
