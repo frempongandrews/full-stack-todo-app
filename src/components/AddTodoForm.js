@@ -18,7 +18,7 @@ const AddTodoForm = React.createClass({
     handleOnSubmitTask (e, name, time) {
         e.preventDefault();
         name = this.props.taskFormName;
-        time = Number(this.props.taskFormTime).toFixed(2);
+        time = Number((this.props.taskFormTime).toFixed(2));
 
         if (Number(time) > 24 || Number(time) < 0) {
             alert("Please insert a human time: between 0 and 24");
